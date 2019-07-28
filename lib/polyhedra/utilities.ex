@@ -33,7 +33,7 @@ defmodule Polyhedra.Utilities do
     n/4*t
   end
 
-  defp find_height(b) do
+  def find_height(b) do
     :math.sqrt(b*b - b*b/4)
   end
 

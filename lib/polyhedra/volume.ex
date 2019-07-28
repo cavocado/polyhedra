@@ -15,7 +15,10 @@ defmodule Polyhedra.Volume do
   end
 
   def octahedron(b) do
-
+    ht = Utilities.find_height(b)
+    h = :math.sqrt(:math.pow(ht, 2) - :math.pow(ht/2, 2))
+    a = b*b
+    2*a*h/3
   end
 
   def dodecahedron(b) do
