@@ -19,6 +19,20 @@ defmodule Polyhedra.SurfaceArea do
     6*equilateral_triangle(b)
   end
 
+  defp a_octagon(b) do
+    a = b/:math.sqrt(2)
+    s = 2*a + b
+    c = s*s
+    t = a*a/2
+    c - 4*t
+  end
+
+  defp a_decagon(b) do
+    n = b*b*10
+    t = :math.tan(18)
+    n/4*t
+  end
+
   ##Platonic Solids
   def tetrahedron(b) do
     4*equilateral_triangle(b)
@@ -74,22 +88,22 @@ defmodule Polyhedra.SurfaceArea do
   end
 
   def great_rhomicuboctahedron(b) do
-    
+    12*b*b + 8*a_hexagon(b) + 6*a_octagon(b)
   end
 
   def small_rhombicosidodecahedron(b) do
     20*equilateral_triangle(b) + 12*a_pentagon(b)
   end
 
-  def great_rhombicosidodecahedron() do
-
+  def great_rhombicosidodecahedron(b) do
+    30*b*b + 20*a_hexagon(b) + 12*a_decagon(b)
   end
 
-  def snub_cube() do
-
+  def snub_cube(b) do
+    6*b*b + 32*equilateral_triangle(b)
   end
 
-  def snub_dodecahedron() do
-
+  def snub_dodecahedron(b) do
+    12*a_pentagon(b) + 80*equilateral_triangle(b)
   end
 end
