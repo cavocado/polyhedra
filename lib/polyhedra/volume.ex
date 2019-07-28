@@ -22,11 +22,15 @@ defmodule Polyhedra.Volume do
   end
 
   def dodecahedron(b) do
-
+    n = 15 + 7*:math.sqrt(5)
+    n/4*:math.pow(b, 3)
   end
 
   def icosahedron(b) do
-
+    a = 5/12
+    d = 3 + :math.sqrt(5)
+    c = :math.pow(b, 3)
+    a*d*c
   end
 
   ##Archimedean Solids
