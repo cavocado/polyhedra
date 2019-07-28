@@ -1,6 +1,6 @@
 # Polyhedra
 
-**TODO: Add description**
+**A simple calculator of the surface area and volume of polyhedra**
 
 ## Installation
 
