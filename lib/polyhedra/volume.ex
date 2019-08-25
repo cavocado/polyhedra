@@ -52,20 +52,24 @@ defmodule Polyhedra.Volume do
     8*:math.pow(b,3)*:math.sqrt(2)
   end
 
-  def truncated_cube() do
-
+  def truncated_cube(b) do
+    c = 21 + 14*:math.sqrt(2)
+    :math.pow(b,3)/3*c
   end
 
-  def truncated_icosahedron() do
-
+  def truncated_icosahedron(b) do
+    c = 125 + 43*:math.sqrt(5)
+    :math.pow(b,3)/4*c
   end
 
-  def truncated_dodecahedron() do
-
+  def truncated_dodecahedron(b) do
+    c = 99 + 47*:math.sqrt(5)
+    5/12*:math.pow(b,3) * c
   end
 
-  def small_rhombicuboctahedron() do
-
+  def small_rhombicuboctahedron(b) do
+    c = 6 + 5 * :math.sqrt(2)
+    2/3*:math.pow(b,3)*c
   end
 
   def great_rhombicuboctahedron() do
