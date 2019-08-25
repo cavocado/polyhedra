@@ -44,12 +44,12 @@ defmodule Polyhedra.Volume do
     :math.pow(b,3)/6*c
   end
 
-  def truncated_tetrahedron() do
-
+  def truncated_tetrahedron(b) do
+    23/12*:math.sqrt(2)*:math.pow(b,3)
   end
 
-  def truncated_octahedron() do
-
+  def truncated_octahedron(b) do
+    8*:math.pow(b,3)*:math.sqrt(2)
   end
 
   def truncated_cube() do
