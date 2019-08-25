@@ -35,4 +35,56 @@ defmodule Polyhedra.Volume do
 
   ##Archimedean Solids
 
+  def cubeoctahedron(b) do
+    5/3*:math.sqrt(2)*:math.pow(b, 3)
+  end
+
+  def icosidodecahedron(b) do
+    c = 45 + 17*:math.sqrt(5)
+    :math.pow(b,3)/6*c
+  end
+
+  def truncated_tetrahedron() do
+
+  end
+
+  def truncated_octahedron() do
+
+  end
+
+  def truncated_cube() do
+
+  end
+
+  def truncated_icosahedron() do
+
+  end
+
+  def truncated_dodecahedron() do
+
+  end
+
+  def small_rhombicuboctahedron() do
+
+  end
+
+  def great_rhombicuboctahedron() do
+
+  end
+
+  def small_rhombicosidodecahedron() do
+
+  end
+
+  def great_rhombicosidodecahedron() do
+
+  end
+
+  def snub_cube() do
+
+  end
+
+  def snub_dodecahedron() do
+
+  end
 end
