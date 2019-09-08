@@ -72,16 +72,19 @@ defmodule Polyhedra.Volume do
     2/3*:math.pow(b,3)*c
   end
 
-  def great_rhombicuboctahedron() do
-
+  def great_rhombicuboctahedron(b) do
+    c = 22 + :math.sqrt(2)
+    c * :math.pow(b, 3)
   end
 
-  def small_rhombicosidodecahedron() do
-
+  def small_rhombicosidodecahedron(b) do
+    c = 60 + 29*:math.sqrt(5)
+    :math.pow(b, 3)/3 * c
   end
 
-  def great_rhombicosidodecahedron() do
-
+  def great_rhombicosidodecahedron(b) do
+    c = 95 + 50*:math.sqrt(5)
+    c*:math.pow(b, 3)
   end
 
   def snub_cube() do
