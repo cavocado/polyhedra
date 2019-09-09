@@ -87,8 +87,11 @@ defmodule Polyhedra.Volume do
     c*:math.pow(b, 3)
   end
 
-  def snub_cube() do
-
+  def snub_cube(b) do
+    t = (1 + :math.pow(19 + 3*:math.sqrt(33), 1/3) + :math.pow(19 - 3*:math.sqrt(33), 1/3))/3
+    n = 3*:math.sqrt(t - 1) + 4*:math.sqrt(t + 1)
+    d = 3*:math.sqrt(2 - t)
+    :math.pow(b, 3) * n / d
   end
 
   def snub_dodecahedron() do
