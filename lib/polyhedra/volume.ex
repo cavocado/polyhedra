@@ -94,7 +94,11 @@ defmodule Polyhedra.Volume do
     :math.pow(b, 3) * n / d
   end
 
-  def snub_dodecahedron() do
-
+  def snub_dodecahedron(b) do
+    gr = 1/2*(1 + :math.sqrt(5))
+    ce = :math.pow(gr/2 + :math.sqrt(gr - 5/27)/2, 1/3) + :math.pow(gr/2 - :math.sqrt(gr - 5/27)/2, 1/3)
+    n = 12*:math.pow(ce, 2)*(3*gr+1) - ce*(36*gr +7) - (53*gr + 6)
+    d = 6*:math.pow(:math.sqrt(3-:math.pow(ce, 2)), 3)
+    :math.pow(b, 3)*n/d
   end
 end
