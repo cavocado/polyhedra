@@ -1,6 +1,4 @@
 defmodule Polyhedra.Volume do
-  alias Polyhedra.Utilities
-
   ##Platonic Solids
 
   def cube(s) do
@@ -8,17 +6,11 @@ defmodule Polyhedra.Volume do
   end
 
   def tetrahedron(b) do
-    a = Utilities.equilateral_triangle(b)
-    ht = Utilities.find_height(b)
-    h = :math.sqrt(:math.pow(ht, 2) - :math.pow(ht/2, 2))
-    a*h/3
+    :math.pow(b, 3)/12 * :math.sqrt(2)
   end
 
   def octahedron(b) do
-    ht = Utilities.find_height(b)
-    h = :math.sqrt(:math.pow(ht, 2) - :math.pow(ht/2, 2))
-    a = b*b
-    2*a*h/3
+    2*tetrahedron(b)
   end
 
   def dodecahedron(b) do
@@ -87,18 +79,11 @@ defmodule Polyhedra.Volume do
     c*:math.pow(b, 3)
   end
 
-  def snub_cube(b) do
-    t = (1 + :math.pow(19 + 3*:math.sqrt(33), 1/3) + :math.pow(19 - 3*:math.sqrt(33), 1/3))/3
-    n = 3*:math.sqrt(t - 1) + 4*:math.sqrt(t + 1)
-    d = 3*:math.sqrt(2 - t)
-    :math.pow(b, 3) * n / d
+  def snub_cube() do
+
   end
 
-  def snub_dodecahedron(b) do
-    gr = 1/2*(1 + :math.sqrt(5))
-    ce = :math.pow(gr/2 + :math.sqrt(gr - 5/27)/2, 1/3) + :math.pow(gr/2 - :math.sqrt(gr - 5/27)/2, 1/3)
-    n = 12*:math.pow(ce, 2)*(3*gr+1) - ce*(36*gr + 7) - (53*gr + 6)
-    d = 6*:math.pow(:math.sqrt(3-:math.pow(ce, 2)), 3)
-    :math.pow(b, 3)*n/d
+  def snub_dodecahedron() do
+
   end
 end

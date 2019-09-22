@@ -7,7 +7,7 @@ defmodule Polyhedra.Utilities do
   def equilateral_triangle(b) do
     c = b
     a = b/2
-    h = :math.sqrt(:math.pow(a,2) - :math.pow(c,2))
+    h = :math.sqrt(:math.pow(c,2) - :math.pow(a,2))
     a_triangle(b,h)
   end
 
