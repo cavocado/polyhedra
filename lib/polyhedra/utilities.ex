@@ -13,7 +13,8 @@ defmodule Polyhedra.Utilities do
   end
 
   def a_pentagon(b) do
-    5 * equilateral_triangle(b)
+    s = 5 * (5 + 2 * sqrt(5))
+    1 / 4 * sqrt(s) * b * b
   end
 
   def a_hexagon(b) do
